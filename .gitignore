@@ -4,7 +4,7 @@ coverage/
 .sass-cache/
 .idea/
 .bowerrc
-.tmp/
+.temp/
 dist/
 ui/
 typings/
