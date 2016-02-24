@@ -5,7 +5,7 @@ var reactify = require('reactify');
 var source = require('vinyl-source-stream')
 
 
-gulp.task('bundle', function(){
+gulp.task('bundle', ['copy'], function(){
     return browserify({
         entries:'app/main.jsx',
         debug:true
@@ -14,6 +14,11 @@ gulp.task('bundle', function(){
         .bundle()
         .pipe(source('app.js'))
         .pipe(gulp.dest('./.temp'))
+});
+
+gulp.task('copy',function(){
+    gulp.src(['app/*.css'])
+    .pipe(gulp.dest('./.temp'))
 });
 
 gulp.task('serve',['bundle'],  function(){

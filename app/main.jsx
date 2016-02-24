@@ -4,4 +4,19 @@ console.log('Hello iam JSX file! ');
 
 var GroceryItemList = require('./components/GroceryItemList.jsx');
 
-React.render(<GroceryItemList />, app);
+var GroceryItemStore = require('./stores/GroceryItemStore.jsx');
+
+var initial = GroceryItemStore.getItems();
+
+
+function render(){
+    console.log(initial);
+    React.render(<GroceryItemList items={initial}/>, app);
+}
+
+GroceryItemStore.onChange(function(items){
+    initial = items;
+    render();
+});
+
+render();
