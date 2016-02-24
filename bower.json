@@ -1,5 +1,5 @@
 {
-  "name": "react",
+  "name": "react!",
   "description": "my first react project",
   "main": "index.js",
   "authors": [
@@ -14,5 +14,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "react": "^0.14.7"
+  }
 }
