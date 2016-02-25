@@ -25,5 +25,10 @@ gulp.task('serve',['bundle'],  function(){
     browserSync.init(null,{
         proxy:"http://localhost/react_test/app",
         port:3000
-    })
+    });
+
+    gulp.watch("app/*.html").on('change', browserSync.reload);
+    gulp.watch("app/*.js").on('change', browserSync.reload);
+    gulp.watch("app/*.css").on('change', browserSync.reload);
+
 });
