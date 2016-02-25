@@ -7,5 +7,11 @@ module.exports = {
             payload:item,
             type:"grocery-item:add"
         })
+    },
+    delete:function(item){
+        dispacher.dispatch({
+            payload:item,
+            type:"grocery-item:delete"
+        })
     }
 }

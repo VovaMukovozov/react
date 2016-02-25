@@ -26,8 +26,19 @@ function GroceryItemStore(){
             listener(items);
         });
     }
-    function addGroceryitem(item){
+    function addGroceryItem(item){
         items.push(item);
+        triggerListeners();
+    }
+
+    function deleteGroceryItem(item){
+        var index;
+        items.filter(function(_item, _index){
+            if(_item.name == item.name) {
+                index = _index;
+            }
+        });
+        items.splice(index,1);
         triggerListeners();
     }
 
@@ -36,7 +47,10 @@ function GroceryItemStore(){
         if(split[0] === 'grocery-item'){
             switch (split[1]){
                 case "add":
-                    addGroceryitem(event.payload);
+                    addGroceryItem(event.payload);
+                    break;
+                case "delete":
+                    deleteGroceryItem(event.payload);
                     break;
             }
         }
