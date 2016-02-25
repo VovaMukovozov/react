@@ -1,4 +1,3 @@
-var React = require('react');
 var dispacher = require('../dispacher.js');
 
 module.exports = {
@@ -12,6 +11,18 @@ module.exports = {
         dispacher.dispatch({
             payload:item,
             type:"grocery-item:delete"
+        })
+    },
+    buy:function(item){
+        dispacher.dispatch({
+            payload:item,
+            type:"grocery-item:buy"
+        })
+    },
+    unbuy:function(item){
+        dispacher.dispatch({
+            payload:item,
+            type:"grocery-item:unbuy"
         })
     }
 }

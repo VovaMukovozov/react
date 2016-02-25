@@ -10,7 +10,6 @@ var initial = GroceryItemStore.getItems();
 
 
 function render(){
-    console.log(initial);
     React.render(<GroceryItemList items={initial}/>, app);
 }
 
