@@ -1,5 +1,5 @@
 var React = require('react');
-var action = require('./../actions/CroceryItemActionCeator.jsx');
+var action = require('./../../actions/CroceryItemActionCeator.jsx');
 
 module.exports = React.createClass({
     togglePurchased: function(e) {
