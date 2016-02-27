@@ -1,4 +1,4 @@
-var dispacher = require('../dispacher.js');
+var dispacher = require('../despachers/item_dispacher.js');
 
 function GroceryItemStore(){
     var items = [{
