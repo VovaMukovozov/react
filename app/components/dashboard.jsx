@@ -1,8 +1,9 @@
 var React = require('react'),
-    Router = require('react-router'),
-    Authentication = require('../mixins/authentication.js'),
-    browserHistory = Router.hashHistory,
     auth = require('../services/auth.js');
+
+var GroceryItemStore = require('../stores/GroceryItemStore.jsx');
+var GroceryItemList = require('../components/GroceryItem/GroceryItemList.jsx');
+var initial = GroceryItemStore.getItems();
 
 var Dashboard = React.createClass({
 
@@ -10,18 +11,14 @@ var Dashboard = React.createClass({
 
   render: function () {
 
-      if(!auth.loggedIn()){
-          browserHistory.push('/login')
-      }
+      GroceryItemStore.onChange(function(items){
+          initial = items;
+          <GroceryItemList items={initial}/>
+      });
 
-    var token = auth.getToken();
-    return (
-      <div>
-        <h1>Dashboard</h1>
-        <p>You made it!</p>
-        <p>Token: {token}</p>
-      </div>
-    );
+      return (
+          <GroceryItemList items={initial}/>
+      );
   }
 });
 
