@@ -9,18 +9,29 @@ var React = require('react'),
     Router = ReactRouter.Router,
     Route = ReactRouter.Route,
     browserHistory = ReactRouter.hashHistory,
+    auth = require('./services/auth.js')
     IndexRoute = ReactRouter.IndexRoute;
+
+
+function requireAuth(nextState, replace) {
+    if (!auth.loggedIn()) {
+        replace({
+            pathname: '/login',
+            state: { nextPathname: nextState.location.pathname }
+        })
+    }
+}
 
 var routes = (
         <Route component={App} path='/'>
             <IndexRoute component={Home} />
             <Route path="login" component={Login}/>
             <Route path="logout" component={Logout}/>
-            <Route path="dashboard" component={Dashboard}/>
+            <Route path="dashboard" component={Dashboard} onEnter={requireAuth}/>
         </Route>
 );
 
-ReactDom.render(<Router history={browserHistory} >{routes}</Router>,   app)
+ReactDom.render(<Router history={browserHistory} >{routes}</Router>,   app);
 
 
 
