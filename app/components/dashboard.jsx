@@ -8,7 +8,6 @@ var initial = GroceryItemStore.getItems();
 var Dashboard = React.createClass({
 
     render: function () {
-        console.log('rendering');
         return (
             <GroceryItemList items={initial}/>
         );
