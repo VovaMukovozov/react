@@ -1,5 +1,5 @@
 var auth = require('../services/auth.js'),
-    Login = require('../components/Login/login.jsx');
+    Login = require('./login.jsx');
 
 var Authentication = {
   statics: {

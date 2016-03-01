@@ -3,13 +3,14 @@ var React = require('react'),
     ReactDom = require('react-dom'),
     App = require('./components/app.jsx'),
     Home = require('./components/home.jsx'),
-    Login = require('./components/Login/login.jsx'),
-    Logout = require('./components/Login/logout.jsx'),
+    Login = require('./components/login/login.jsx'),
+    Logout = require('./components/login/logout.jsx'),
     Dashboard = require('./components/dashboard.jsx'),
     Router = ReactRouter.Router,
     Route = ReactRouter.Route,
     browserHistory = ReactRouter.hashHistory,
-    auth = require('./services/auth.js')
+    auth = require('./services/auth.js'),
+    Register = '',
     IndexRoute = ReactRouter.IndexRoute;
 
 
@@ -27,6 +28,7 @@ var routes = (
             <IndexRoute component={Home} />
             <Route path="login" component={Login}/>
             <Route path="logout" component={Logout}/>
+            <Route path="register" component={Register}/>
             <Route path="dashboard" component={Dashboard} onEnter={requireAuth}/>
         </Route>
 );

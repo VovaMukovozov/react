@@ -23,14 +23,15 @@ var App = React.createClass({
   },
 
   render: function () {
-    var loginOrOut = this.state.loggedIn ?
-      <Link to="logout">Log out</Link> :
-      <Link to="login">Sign in</Link>;
+    var loginOrOut = this.state.loggedIn ? <Link to="logout">Log out</Link> : <Link to="login">Sign in</Link>,
+        register = (!this.state.loggedIn) ? <li><Link to="register">Sign up</Link></li> : '',
+        dashboard = this.state.loggedIn ? <li><Link to="dashboard">Dashboard</Link></li> : '';
     return (
       <div>
         <ul>
           <li>{loginOrOut}</li>
-          <li><Link to="dashboard">Dashboard</Link> (authenticated)</li>
+          {register}
+          {dashboard}
         </ul>
         {this.props.children}
       </div>
