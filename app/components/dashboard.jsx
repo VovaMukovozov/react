@@ -7,19 +7,19 @@ var initial = GroceryItemStore.getItems();
 
 var Dashboard = React.createClass({
 
-  mixins: [ Authentication ],
+    render: function () {
+        console.log('rendering');
+        return (
+            <GroceryItemList items={initial}/>
+        );
+    },
+    componentDidMount: function () {
+        GroceryItemStore.onChange(function(items){
+            initial = items;
+            this.setState({ items: initial });
+        }.bind(this));
+    }
 
-  render: function () {
-
-      GroceryItemStore.onChange(function(items){
-          initial = items;
-          <GroceryItemList items={initial}/>
-      });
-
-      return (
-          <GroceryItemList items={initial}/>
-      );
-  }
 });
 
 module.exports = Dashboard;
