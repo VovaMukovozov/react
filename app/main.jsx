@@ -10,7 +10,7 @@ var React = require('react'),
     Route = ReactRouter.Route,
     browserHistory = ReactRouter.hashHistory,
     auth = require('./services/auth.js'),
-    Register = '',
+    Register = require('./components/login/register.jsx'),
     IndexRoute = ReactRouter.IndexRoute;
 
 
