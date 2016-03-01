@@ -23,7 +23,7 @@ gulp.task('copy',function(){
 
 gulp.task('serve',['bundle'],  function(){
     browserSync.init(null,{
-        proxy:"http://localhost/react_test/app",
+        proxy:"http://loc.react_test.com/app",
         port:3000
     });
 
