@@ -3,21 +3,21 @@ var React = require('react'),
     ReactDom = require('react-dom'),
     App = require('./components/app.jsx'),
     Home = require('./components/home.jsx'),
-    Login = require('./components/login/login.jsx'),
-    Logout = require('./components/login/logout.jsx'),
+    Login = require('./components/Login/Login.jsx'),
+    Logout = require('./components/Login/Logout.jsx'),
     Dashboard = require('./components/dashboard.jsx'),
     Router = ReactRouter.Router,
     Route = ReactRouter.Route,
     browserHistory = ReactRouter.hashHistory,
     auth = require('./services/auth.js'),
-    Register = require('./components/login/register.jsx'),
+    Register = require('./components/Login/Register.jsx'),
     IndexRoute = ReactRouter.IndexRoute;
 
 
 function requireAuth(nextState, replace) {
     if (!auth.loggedIn()) {
         replace({
-            pathname: '/login',
+            pathname: '/Login',
             state: { nextPathname: nextState.location.pathname }
         })
     }

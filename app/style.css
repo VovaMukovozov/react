@@ -27,5 +27,9 @@ h1 {
     padding-top: 1rem;
 }
 .validator-error{
-    background-color: red;
+    border-color: red !important;
+}
+.validation-error{
+    float: right;
+    color: red;
 }

@@ -1,6 +1,6 @@
 var auth = require('../services/auth.js');
 
-var RedirectWhenLoggedIn = {
+var redirectWhenLoggedIn = {
   statics: {
     willTransitionTo: function (transition) {
       if ( auth.loggedIn()) {
@@ -10,4 +10,4 @@ var RedirectWhenLoggedIn = {
   }
 };
 
-module.exports = RedirectWhenLoggedIn;
+module.exports = redirectWhenLoggedIn;

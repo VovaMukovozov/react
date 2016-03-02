@@ -2,11 +2,11 @@ var React = require('react'),
     Router = require('react-router'),
     auth = require('../../services/auth.js'),
     browserHistory = Router.hashHistory,
-    RedirectWhenLoggedIn = require('../../mixins/redirect_when_logged_in');
+    redirectWhenLoggedIn = require('../../mixins/redirect_when_logged_in');
 
 var Login = React.createClass({
 
-  mixins: [ Router.Navigation, RedirectWhenLoggedIn ],
+  mixins: [ Router.Navigation, redirectWhenLoggedIn ],
 
   statics: {
     attemptedTransition: null

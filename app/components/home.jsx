@@ -1,9 +1,9 @@
 var React = require('react'),
-    RedirectWhenLoggedIn = require('../mixins/redirect_when_logged_in.js');
+    redirectWhenLoggedIn = require('../mixins/redirect_when_logged_in.js');
 
 var Home = React.createClass({
 
-  mixins: [RedirectWhenLoggedIn],
+  mixins: [redirectWhenLoggedIn],
 
   render: function () {
     return (
