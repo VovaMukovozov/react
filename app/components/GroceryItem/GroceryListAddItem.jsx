@@ -1,36 +1,41 @@
-var React = require('react');
-var action = require('./../../actions/CroceryItemActionCeator.jsx');
+var React = require('react'),
+    InputForm = require('./../General/FormInput.jsx'),
+    Action = require('./../../actions/CroceryItemActionCeator.jsx');
 
 module.exports = React.createClass({
+
     getInitialState: function(){
-        return {value:""}
+        return {
+            canSubmit: false
+        }
     },
-    handleInputName: function(e){
+
+    enableButton: function () {
         this.setState({
-            value: e.target.value
+            canSubmit: true
         });
     },
-    addItem: function(e){
-        e.preventDefault();
-        //console.log("Adding item!" + this.state.value);
-        action.add({
-            name: this.state.value
-        });
+    disableButton: function () {
         this.setState({
-            value: ""
+            canSubmit: false
+        });ref="form"
+    },
+
+    submit: function(data){
+
+        Action.add({
+            name: data.item
         });
+
+        this.refs.form.reset();
     },
     render: function(){
         return (
             <div className="grocery-addItem">
-                <form onSubmit= {this.addItem}>
-                    <input
-                        type="text"
-                        value={this.state.value}
-                        onChange={this.handleInputName}
-                    />
-                    <button> Add Item </button>
-                </form>
+                <Formsy.Form ref="form" onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
+                    <InputForm name="item" inputClassName="u-full-width" validations="isExisty" validationError="This is not a valid item" required/>
+                    <button type="submit" disabled={!this.state.canSubmit} >Add Item</button>
+                </Formsy.Form>
             </div>
         )
     }
