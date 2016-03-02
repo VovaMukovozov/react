@@ -1,6 +1,6 @@
 var React = require('react'),
     Router = require('react-router'),
-    InputForm = require('./FormInput.jsx'),
+    InputForm = require('./../General/FormInput.jsx'),
     BrowserHistory = Router.hashHistory,
     auth = require('../../services/auth.js'),
     redirectWhenLoggedIn = require('../../mixins/redirect_when_logged_in');
