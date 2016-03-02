@@ -56,62 +56,6 @@ var Login = React.createClass({
           {loginError}
         </Formsy.Form>
     );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //var errors = this.state.error ? <p>Bad login information</p> : '';
-    //return (
-    //  <form onSubmit={this.handleSubmit}>
-    //    <div className="row">
-    //      <div className="six columns">
-    //        <label for="exampleEmailInput">Your email</label>
-    //        <input
-    //            className="u-full-width"
-    //            type="email"
-    //            placeholder="test@mailbox.com"
-    //            id="exampleEmailInput"
-    //            defaultValue={this.state.user}
-    //            onChange={this.handleInputEmail}
-    //        />
-    //      </div>
-    //    </div>
-    //
-    //
-    //
-    //    <div className="row">
-    //      <div className="six columns">
-    //        <label for="examplePasswordInput">Password</label>
-    //        <input
-    //            className="u-full-width"
-    //            type="password"
-    //            placeholder="password"
-    //            id="examplePasswordInput"
-    //            defaultValue={this.state.password}
-    //            onChange={this.handleInputPassword}
-    //        />
-    //      </div>
-    //    </div>
-    //    <button className="button-primary"> LogIn </button>
-    //    {errors}
-    //  </form>
-    //);
   }
 });
 
