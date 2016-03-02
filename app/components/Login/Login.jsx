@@ -52,7 +52,7 @@ var Login = React.createClass({
         <Formsy.Form onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
           <InputForm name="email" title="Email" inputClassName="u-full-width" validations="isEmail" validationError="This is not a valid email" required/>
           <InputForm name="password" title="Password" type="password" inputClassName="u-full-width" validations="minLength:8" validationError="This is not a valid password" required/>
-          <button type="submit" disabled={!this.state.canSubmit} className="button-primary" >Register</button>
+          <button type="submit" disabled={!this.state.canSubmit} className="button-primary" >LogIn</button>
           {loginError}
         </Formsy.Form>
     );
