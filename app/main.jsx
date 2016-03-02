@@ -17,7 +17,7 @@ var React = require('react'),
 function requireAuth(nextState, replace) {
     if (!auth.loggedIn()) {
         replace({
-            pathname: '/Login',
+            pathname: '/login',
             state: { nextPathname: nextState.location.pathname }
         })
     }
