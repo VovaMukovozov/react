@@ -28,6 +28,7 @@ module.exports = React.createClass({
                         value={this.getValue()}
                         checked={this.props.type === 'checkbox' && this.getValue() ? 'checked' : null}
                     />
+                    
                     <span className='validation-error'>{errorMessage}</span>
                 </div>
             </div>
