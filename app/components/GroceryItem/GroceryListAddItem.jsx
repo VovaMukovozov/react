@@ -1,4 +1,5 @@
 var React = require('react'),
+    NoteInput = require('./../General/NoteInput.jsx'),
     InputForm = require('./../General/FormInput.jsx'),
     Action = require('./../../actions/CroceryItemActionCeator.jsx'),
     Modal = require('react-modal');
@@ -65,6 +66,7 @@ module.exports = React.createClass({
                     <div className="grocery-addItem">
                         <Formsy.Form ref="form" onValidSubmit={this.submit} onValid={this.enableButton} onInvalid={this.disableButton}>
                          <InputForm name="item" inputClassName="u-full-width" validations="isExisty" validationError="This is not a valid item" required/>
+                         <NoteInput name="item" inputClassName="u-full-width" validations="isExisty" validationError="This is not a valid item" required/>
                             <button type="submit" disabled={!this.state.canSubmit} >Add Item</button>
                             <button onClick={this.closeModal}>close</button>
                         </Formsy.Form>
