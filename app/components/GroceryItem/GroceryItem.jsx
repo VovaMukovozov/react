@@ -21,12 +21,12 @@ module.exports = React.createClass({
         return (
             <div className="grocery-item row">
                 <div className="six columns">
-                    <h4 className={this.props.item.purchased ? "striketrough" : ""}>{this.props.item.name}</h4>
+                    <h4 className={this.props.item.purchased ? "" : "striketrough"}>{this.props.item.name}</h4>
                 </div>
 
                 <form className="three columns" onSubmit={this.togglePurchased}>
                     <button className={this.props.item.purchased ? " " : "button-primary"}>
-                        {this.props.item.purchased ? "Unbuy" : "Buy"}
+                        {this.props.item.purchased ? "Unimportant" : "Important"}
                     </button>
                 </form>
 
