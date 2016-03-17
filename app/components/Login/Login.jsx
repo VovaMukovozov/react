@@ -33,6 +33,20 @@ var Login = React.createClass({
 
   submit: function (data) {
     auth.login(data.email, data.password, function (loggedIn) {
+
+    fetch('http://localhost:8080/users/login', {
+    method: 'post',
+    headers: {
+      "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+    },
+    body: 'email=vova.mukovozov@sergata.com&password=123456789'
+  })
+  .then(function (data) {
+    console.log('Request succeeded with JSON response', data);
+  })
+  .catch(function (error) {
+    console.log('Request failed', error);
+  });
       if (!loggedIn)
         return this.setState({ error: true });
       if (Login.attemptedTransition) {
