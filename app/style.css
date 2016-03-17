@@ -18,8 +18,7 @@ h1 {
 }
 
 .striketrough {
-    text-decoration: line-through;
-    color: slategray;
+    color: darkslategray;
 }
 
 .grocery-addItem {
